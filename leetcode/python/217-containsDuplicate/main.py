@@ -1,14 +1,12 @@
 from typing import List
 
 def containsDuplicate(nums: List[int]) -> bool:
-    hash = {}
+    dup = set()
     for num in nums:
-        res = hash.get(num)
-        if not res:
-            hash[num] = 1
+        if num not in dup:
+            dup.add(num)
         else:
             return True
-        
     return False
 
 
